@@ -1,0 +1,10 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<h1>Предрегистрация</h1>
+<p>Выберите, что вы хотите сделать:</p>
+<ul>
+    <li><a href="{% url 'users:registerclient' %}">Зарегистрироваться как клиент</a></li>
+    <li><a href="{% url 'users:registerdoctor' %}">Зарегистрироваться как доктор</a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <h2>Список промокодов</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Промокод</th>
+        <th>Процент скидки</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for promo in promocodes %}
+        <tr>
+          <td>{{ promo.promocode }}</td>
+          <td>{{ promo.percent }}%</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="2">Нет доступных промокодов.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

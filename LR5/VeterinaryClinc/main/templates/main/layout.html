@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{%  endblock %}</title>
+</head>
+<body>
+    <aside>
+        <h3>Навигация</h3>
+        <ul>
+            {% if user.is_authenticated %}
+                <li class="last"> {{user.username}} | <a href="{% url 'users:logout' %}">Выйти</a></li>
+            {% else %}
+                <li class="last"><a href="{% url 'users:login' %}">Войти</a> | <a href="{% url 'users:preregistration' %}">Регистрация</a></li>
+            {% endif %}
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i>Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="fas fa-address-card"></i>О компании</li></a>
+            <a href="{% url 'news_home' %}"><li><i class="fas fa-paper-plane"></i>Новости</li></a>
+            {% if user.is_staff %}
+                <a href="{% url 'doctors_schedule' %}"><li>Расписание</li></a>
+            {% else %}
+                <a href="{% url 'clients_home' %}"><li>Pets</li></a>
+                <a href="{% url 'order_list' %}"><li>Мои заказы</li></a>
+            {% endif %}
+            <a href="{% url 'service_list' %}"><li>Услуги</li></a>
+            <a href="{% url 'questions_list' %}"><li>Словарь терминов и понятий</li></a>
+            <a href="{% url 'users:list_doctors' %}"><li>Контакты</li></a>
+            <a href="{% url 'policy' %}"><li>Политика</li></a>
+            <a href="{% url 'vacancy-list' %}"><li>Вакансии</li></a>
+            <a href="{% url 'reviews-list' %}"><li>Отзывы</li></a>
+            <a href="{% url 'promocode-list' %}"><li>Промокоды и купоны</li></a>
+            <a href="{% url 'statistics' %}"><li>Статистика</li></a>
+            <a href="{% url 'article-index' %}">График</a>
+            <a href="{% url 'cat_fact' %}"><li>Факты о кошках</li></a>
+            <a href="{% url 'random_dog' %}"><li>Фотографии собак</li></a>
+
+        </ul>
+
+    </aside>
+    <main>
+        {% block content %}
+        {%  endblock %}
+    </main>
+</body>
+<footer>
+    <div class="container">
+        <span class="text-muted">© 2024 Ветеринарная клиника</span>
+    </div>
+</footer>
+</html>

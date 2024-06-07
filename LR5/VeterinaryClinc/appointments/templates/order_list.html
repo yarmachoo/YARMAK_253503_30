@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+ <a href="{% url 'order_create' %}">Add</a>
+  <h1>Orders</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Pet</th>
+        <th>Doctor</th>
+        <th>Total cost</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+        <tr>
+          <td>{{ order.date }}</td>
+          <td>{{ order.pet.name }}</td>
+          <td>{{ order.doctor.last_name }}</td>
+          <td>{{ order.total_cost}}</td>
+          <td>
+            <a href="{% url 'order_detail' order.id %}">View</a>
+            <a href="{% url 'order_update' order.id %}">Edit</a>
+            <a href="{% url 'order_delete' order.id %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

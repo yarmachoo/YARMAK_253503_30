@@ -1,0 +1,12 @@
+<!-- service_list.html -->
+{% if user.is_staff %}
+  <a href="{% url 'service_create' %}">Добавить новую услугу</a>
+{% endif %}
+<h1>Список услуг</h1>
+<ul>
+  {% for service in services %}
+  <li>
+    <a href="{% url 'service_detail' service.id %}">{{ service.name }} - {{ service.cost }} руб.</a>
+  </li>
+  {% endfor %}
+</ul>

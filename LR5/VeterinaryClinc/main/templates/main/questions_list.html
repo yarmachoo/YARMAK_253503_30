@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <h1>Вопросы и Ответы</h1>
+  <div class="questions">
+    {% for question in questions %}
+      <div class="question">
+        <h3>{{ question.question }}</h3>
+        <p>{{ question.answer }}</p>
+        <small>Добавлено: {{ question.date_added|date:"Y-m-d H:i" }}</small>
+      </div>
+    {% empty %}
+      <p>Вопросов пока нет.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <h1>Update Order</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="pet">Pet:</label>
+      <select name="pet" id="pet">
+        {% for pet in pets %}
+          <option value="{{ pet.id }}" {% if pet == order.pet %}selected{% endif %}>{{ pet.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="doctor">Doctor:</label>
+      <select name="doctor" id="doctor">
+        {% for doctor in doctors %}
+          <option value="{{ doctor.id }}" {% if doctor == order.doctor %}selected{% endif %}>{{ doctor.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" name="date" id="date" value="{{ order.date|date:'Y-m-d' }}">
+    </div>
+    <div>
+      <label>Services:</label>
+      {% for service in services %}
+        <div>
+          <input type="checkbox" name="services" value="{{ service.id }}" {% if service in order.services.all %}checked{% endif %}>
+          <label>{{ service.name }} - {{ service.cost }}</label>
+        </div>
+      {% endfor %}
+    </div>
+    <button type="submit">Update Order</button>
+  </form>
+{% endblock %}

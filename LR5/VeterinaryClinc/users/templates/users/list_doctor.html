@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <h2>Список докторов</h2>
+  <ul>
+    {% for doctor in doctors %}
+      <li>
+        <div>
+          <h3>{{ doctor.username }}</h3>
+          {% if doctor.photo %}
+            <img src="{{ doctor.photo.url }}" alt="Фото {{ doctor.username }}">
+            {% else %}
+            <img src="14.png">
+            {% endif %}
+          <p>Телефон: {{ doctor.phone_number }}</p>
+          <p>Дата рождения: {{ doctor.date_birth }}</p>
+          <p>Отделение: {{ doctor.department }}</p>
+          <p>Специализации: {{ doctor.specializations }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  </form>
+{% endblock %}

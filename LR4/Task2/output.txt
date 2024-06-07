@@ -1,0 +1,64 @@
+Количество предложений в тексте:15
+Количество повествовательных предложений:12
+Количество вопросительных предложений: 1
+Количество побудительных предложений: 1
+Средняя длина предложения: 39.266666666666666 символов
+Средняя длина слова: 5.168421052631579 символов
+Количество смайликов: 4
+Слова с сочетанием букв верхнего регистра и цифр:
+ABC123
+XYZ9876
+QWERTY54321
+Надежность пароля для первого слова: Пароль надежный.
+Количество слов в строке: Line 1: Number of words = 1
+Line 2: Number of words = 94
+Line 3: Number of words = 0
+
+Самое длинное слово: combination, и его порядковый номер: 37
+Вывести каждое четное слово: Line 2, Word 2: text 
+Line 2, Word 4: several 
+Line 2, Word 6: Sentence 
+Line 2, Word 8: one 
+Line 2, Word 10: second 
+Line 2, Word 12: with 
+Line 2, Word 14: question 
+Line 2, Word 16: And 
+Line 2, Word 18: third 
+Line 2, Word 20: which 
+Line 2, Word 22: imperative 
+Line 2, Word 24: we 
+Line 2, Word 26: several 
+Line 2, Word 28: and 
+Line 2, Word 30: one 
+Line 2, Word 32: now 
+Line 2, Word 34: with 
+Line 2, Word 36: combination 
+Line 2, Word 38: uppercase 
+Line 2, Word 40: and 
+Line 2, Word 42: ABC123 
+Line 2, Word 44: QWERTY54321 
+Line 2, Word 46: the 
+Line 2, Word 48: C00l_Pass 
+Line 2, Word 50: t 
+Line 2, Word 52: about 
+Line 2, Word 54: reliability 
+Line 2, Word 56: C00l_Pass 
+Line 2, Word 58: And 
+Line 2, Word 60: s 
+Line 2, Word 62: sentence 
+Line 2, Word 64: analysis 
+Line 2, Word 66: and 
+Line 2, Word 68: The 
+Line 2, Word 70: brown 
+Line 2, Word 72: jumps 
+Line 2, Word 74: the 
+Line 2, Word 76: dog 
+Line 2, Word 78: and 
+Line 2, Word 80: And 
+Line 2, Word 82: is 
+Line 2, Word 84: longest 
+Line 2, Word 86: And 
+Line 2, Word 88: the 
+Line 2, Word 90: sentence 
+Line 2, Word 92: finish 
+Line 2, Word 94: text 

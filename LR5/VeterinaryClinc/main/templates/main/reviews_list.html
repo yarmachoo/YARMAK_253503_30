@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <h2>Отзывы пользователей</h2>
+  <div class="reviews">
+    {% for review in reviews %}
+      <div class="review">
+        <strong>Пользователь:</strong> {{ review.user.username }}<br>
+        <strong>Рейтинг:</strong> {{ review.rating }}<br>
+        <strong>Отзыв:</strong> {{ review.text }}<br>
+        <strong>Дата:</strong> {{ review.date }}
+      </div>
+    {% empty %}
+      <p>Отзывов пока нет.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Питомцы</title>
+</head>
+<body>
+<h2>Список питомцев</h2>
+<pre>{{ calendar }}</pre>
+    <a href="create/">Добавление питомца</a>
+    <table>
+        <thead>
+        <th>Имя</th>
+        <th>Вид</th>
+        <th>Возраст</th>
+        <th>Дата публикации (Местное время)</th>
+        <th>Дата публикации (UTC)</th></thead>
+        {% for pet in pets %}
+        <tr>
+            <td>{{ pet.name }}</td>
+            <td>{{ pet.species }}</td>
+            <td>{{ pet.age }}</td>
+            <td>{{ pet.get_local_time }}</td>
+            <td>{{ pet.get_utc_time }}</td>
+            <td>
+                <a href="edit/{{ pet.id }}">Изменить</a> | <a href="delete/{{ pet.id }}">Удалить</a>
+            </td>
+        </tr>
+
+
+        {% endfor %}
+    </table>
+
+<form method="get" action="{% url 'clients_home' %}">
+    <input type="text" name="search" placeholder="Поиск по имени или виду...">
+    <button type="submit">Поиск</button>
+</form>
+<ul>
+    <a href="{% url 'clients_home' %}?order=name"><li>Сортировать по имени</li></a>
+    <a href="{% url 'clients_home' %}?order=-name"><li>Сортировать по имени (обратно)</li></a>
+    <a href="{% url 'clients_home' %}?order=species"><li>Сортировать по виду</li></a>
+    <a href="{% url 'clients_home' %}?order=-species"><li>Сортировать по виду (обратно)</li></a>
+</ul>
+</body>
+</html>

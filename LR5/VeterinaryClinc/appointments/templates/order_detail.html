@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <h1>Order Details</h1>
+  <p>Date: {{ order.date }}</p>
+  <p>Pet: {{ order.pet.name }}</p>
+  <p>Doctor: {{ order.doctor.name }}</p>
+  <h2>Services</h2>
+  <ul>
+    {% for service in order.services.all %}
+      <li>{{ service.name }} - {{ service.cost }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
