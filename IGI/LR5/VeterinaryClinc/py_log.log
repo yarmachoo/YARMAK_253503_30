@@ -1,0 +1,203 @@
+2024-05-24 10:59:29,187 INFO "GET / HTTP/1.1" 200 3452
+2024-05-24 10:59:37,629 INFO "GET /users/logout/ HTTP/1.1" 302 0
+2024-05-24 10:59:37,637 INFO "GET / HTTP/1.1" 200 3547
+2024-05-24 10:59:38,856 INFO "GET /users/login/ HTTP/1.1" 200 2525
+2024-05-24 10:59:45,517 INFO registration is success
+2024-05-24 10:59:45,524 INFO "POST /users/login/ HTTP/1.1" 302 0
+2024-05-24 10:59:45,534 INFO "GET / HTTP/1.1" 200 3493
+2024-05-24 10:59:47,590 INFO "GET /appointments/orders HTTP/1.1" 200 8446
+2024-05-24 10:59:56,217 ERROR Internal Server Error: /clients/
+Traceback (most recent call last):
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\VeterinaryClinc\clients\views.py", line 25, in index
+    return render(request, "clients/index.html", {"pets": pets})
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+2024-05-24 10:59:56,219 ERROR "GET /clients/ HTTP/1.1" 500 125652
+2024-05-24 11:01:32,733 ERROR Internal Server Error: /clients/
+Traceback (most recent call last):
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\VeterinaryClinc\clients\views.py", line 25, in index
+    return render(request, "clients/index.html", {"pets": pets})
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2024-05-24 11:01:32,734 ERROR "GET /clients/ HTTP/1.1" 500 125679
+2024-05-24 11:01:33,759 ERROR Internal Server Error: /clients/
+Traceback (most recent call last):
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\VeterinaryClinc\clients\views.py", line 25, in index
+    return render(request, "clients/index.html", {"pets": pets})
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2024-05-24 11:01:33,760 ERROR "GET /clients/ HTTP/1.1" 500 125679
+2024-05-24 11:01:46,940 ERROR Internal Server Error: /clients/
+Traceback (most recent call last):
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\VeterinaryClinc\clients\views.py", line 25, in index
+    return render(request, "clients/index.html", {"pets": pets})
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+2024-05-24 11:01:46,941 ERROR "GET /clients/ HTTP/1.1" 500 125653
+2024-05-24 11:01:48,072 ERROR Internal Server Error: /clients/
+Traceback (most recent call last):
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\VeterinaryClinc\clients\views.py", line 25, in index
+    return render(request, "clients/index.html", {"pets": pets})
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\253503_YARMAK_30\IGI\LR5\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+2024-05-24 11:01:48,073 ERROR "GET /clients/ HTTP/1.1" 500 125653
+2024-05-24 11:01:59,762 INFO "GET /clients/ HTTP/1.1" 200 1731
+2024-05-24 11:02:09,901 INFO Check the POST paramter of create client
+2024-05-24 11:02:09,918 INFO "GET /clients/create/ HTTP/1.1" 200 1045
+2024-05-24 11:02:30,599 INFO Check the POST paramter of create client
+2024-05-24 11:02:30,609 INFO "POST /clients/create/ HTTP/1.1" 302 0
+2024-05-24 11:02:30,622 INFO "GET / HTTP/1.1" 200 3493
+2024-05-24 11:02:32,651 INFO "GET /clients/ HTTP/1.1" 200 2123
+2024-05-24 11:02:39,863 INFO "GET /clients/?search= HTTP/1.1" 200 2123
+2024-05-24 11:02:45,565 INFO "GET /clients/?search=%D0%90%D0%B2%D0%BA%D0%B0%D0%BA%D0%B8%D0%B9 HTTP/1.1" 200 1727
+2024-05-24 11:02:55,225 INFO "GET /clients/?search=%D0%92%D0%B5%D1%80%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0 HTTP/1.1" 200 1731
+2024-05-24 11:02:58,572 INFO "GET /clients/?order=name HTTP/1.1" 200 2123
+2024-05-24 11:03:00,385 INFO "GET /clients/?order=-name HTTP/1.1" 200 2123
+2024-05-24 11:03:01,910 INFO "GET /clients/?order=species HTTP/1.1" 200 2123
+2024-05-24 11:03:03,205 INFO "GET /clients/?order=-species HTTP/1.1" 200 2123
+2024-05-24 11:03:06,626 INFO "GET /clients/?order=name HTTP/1.1" 200 2123
+2024-05-24 11:03:08,012 INFO "GET /clients/?order=-name HTTP/1.1" 200 2123
+2024-05-24 11:03:09,504 INFO "GET /clients/?order=species HTTP/1.1" 200 2123
+2024-05-24 11:03:10,620 INFO "GET /clients/?order=-species HTTP/1.1" 200 2123
+2024-05-24 11:05:04,015 INFO "GET /clients/?order=-species HTTP/1.1" 200 1914
+2024-05-24 11:05:07,248 INFO "GET /clients/?order=name HTTP/1.1" 200 1914
+2024-05-24 11:05:08,510 INFO "GET /clients/?order=-name HTTP/1.1" 200 1914
+2024-05-24 11:05:09,803 INFO "GET /clients/?order=species HTTP/1.1" 200 1914
+2024-05-24 11:06:01,435 INFO "GET /clients/?order=species HTTP/1.1" 200 1966
+2024-05-24 11:06:23,921 INFO "GET /clients/?order=species HTTP/1.1" 200 1966
+2024-05-24 11:13:25,273 INFO D:\253503_YARMAK_30\IGI\LR5\VeterinaryClinc\appointments\views.py changed, reloading.

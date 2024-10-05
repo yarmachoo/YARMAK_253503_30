@@ -1,0 +1,135 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <h1>Doctor Orders</h1>
+
+  <h2>Doctor Name: {{ doctor.last_name }}</h2>
+
+  <h3>Orders Before Today</h3>
+ {% if orders_before_today %}
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Client</th>
+        <th>Pet</th>
+        <th>Services</th>
+        <th>Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders_before_today %}
+        <tr>
+          <td>{{ order.date }}</td>
+          <td>{{ order.client.last_name }} {{ order.client.first_name }}</td>
+          <td>{{ order.pet.name }}</td>
+          <td>
+            {% for service in order.services.all %}
+              {{ service.name }} - {{ service.cost }}<br>
+            {% endfor %}
+          </td>
+          <td>{{ order.total_cost }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>У вас еще не было заказов раньше</p>
+  {% endif %}
+
+  <h3>Orders Today</h3>
+ {% if orders_today %}
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Client</th>
+        <th>Pet</th>
+        <th>Services</th>
+        <th>Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders_today %}
+        <tr>
+          <td>{{ order.date }}</td>
+          <td>{{ order.client.last_name }} {{ order.client.first_name }}</td>
+          <td>{{ order.pet.name }}</td>
+          <td>
+            {% for service in order.services.all %}
+              {{ service.name }} - {{ service.cost }}<br>
+            {% endfor %}
+          </td>
+          <td>{{ order.total_cost }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>У вас нет заказов на сегодня</p>
+  {% endif %}
+
+  <h3>Orders Tomorrow</h3>
+ {% if orders_tomorrow %}
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Client</th>
+        <th>Pet</th>
+        <th>Services</th>
+        <th>Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders_tomorrow %}
+        <tr>
+          <td>{{ order.date }}</td>
+          <td>{{ order.client.last_name }} {{ order.client.first_name }}</td>
+          <td>{{ order.pet.name }}</td>
+          <td>
+            {% for service in order.services.all %}
+              {{ service.name }} - {{ service.cost }}<br>
+            {% endfor %}
+          </td>
+          <td>{{ order.total_cost }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>У вас нет заказов на сегодня</p>
+  {% endif %}
+
+ {% if orders_after_tomorrow %}
+  <h3>Orders After Tomorrow</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Client</th>
+        <th>Pet</th>
+        <th>Services</th>
+        <th>Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders_after_tomorrow %}
+        <tr>
+          <td>{{ order.date }}</td>
+          <td>{{ order.client.last_name }} {{ order.client.first_name }}</td>
+          <td>{{ order.pet.name }}</td>
+          <td>
+            {% for service in order.services.all %}
+              {{ service.name }} - {{ service.cost }}<br>
+            {% endfor %}
+          </td>
+          <td>{{ order.total_cost }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>У вас нет заказов на следующие дни</p>
+  {% endif %}
+{% endblock %}

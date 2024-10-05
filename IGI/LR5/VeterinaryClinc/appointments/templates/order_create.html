@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <h1>Добавить в корзину</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="pet">Питомец:</label>
+      <select name="pet" id="pet">
+        {% for pet in pets %}
+          <option value="{{ pet.id }}">{{ pet.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="doctor">Доктор:</label>
+      <select name="doctor" id="doctor">
+        {% for doctor in doctors %}
+          <option value="{{ doctor.id }}">{{ doctor.last_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="date">Дата:</label>
+      <input type="date" name="date" id="date">
+    </div>
+    <div>
+      <label>Услуги:</label>
+      {% for service in services %}
+        <div>
+          <input type="checkbox" name="services" value="{{ service.id }}">
+          <label>{{ service.name }} - {{ service.cost }}</label>
+        </div>
+      {% endfor %}
+    </div>
+    <button type="submit">Создать заказ</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+<title>{% block title %}Питомцы | Изменить{% endblock %}</title>
+{% block content %}
+<body>
+    <h2>Изменение информации о питомце</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Введите имя питомца</label>
+            <input type="text" name="name" value="{{pet.name}}"></input>
+        </p>
+        <p>
+            <label>Введите вид питомца</label>
+            <input type="text" name="species" value="{{pet.species}}">
+        </p>
+        <p>
+            <label>Введите возраст питомца</label>
+            <input type="number" name="age" value="{{pet.age}}">
+        </p>
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+{% endblock %}

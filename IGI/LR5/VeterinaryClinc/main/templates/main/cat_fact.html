@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+{% block title %}<h1>Рубрика рандомные факты о кошках</h1>{% endblock %}
+
+{% block content %}
+  <h1>Рубрика рандомные факты о кошках</h1>
+{% if cat_fact %}
+  <p>Random Cat Fact: {{ cat_fact }}</p>
+{% else %}
+  <p>Sorry, we couldn't load a cat fact right now.</p>
+{% endif %}
+
+{% endblock %}
+

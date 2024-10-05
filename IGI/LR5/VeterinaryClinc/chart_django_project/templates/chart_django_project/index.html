@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div class="row mt-5">
+        <div class="col-md-4 mt-2">
+            <h4>Add Data</h4>
+            <hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input class="btn btn-success mt-2" type="submit" value="Add Data">
+            </form>
+        </div>
+        <div class="col-md-8">
+            <!-- Отображение графика Matplotlib -->
+            <img src="data:image/png;base64,{{ img_url }}" alt="My Graph">
+        </div>
+    </div>
+{% endblock %}

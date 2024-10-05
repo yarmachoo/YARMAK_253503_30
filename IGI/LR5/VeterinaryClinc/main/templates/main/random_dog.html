@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+{% block title %}<h1>Рубрика рандомные фотографии собак</h1>{% endblock %}
+
+{% block content %}
+  <h1>Рубрика рандомные фотографии собак</h1>
+{% if image_url %}
+  <img src="{{ image_url }}" alt="Random Dog Image">
+{% else %}
+  <p>Sorry, we couldn't load a dog image right now.</p>
+{% endif %}
+
+{% endblock %}
+

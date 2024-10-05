@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<h1>Статистика</h1>
+
+<div>
+    <h2>Статистика по возрасту пользователей</h2>
+    <p>Средний возраст: {{ average_age }}</p>
+    <p>Медианный возраст: {{ median_age }}</p>
+
+</div>
+
+{% endblock %}
