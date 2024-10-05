@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<h1>Оплата заказа</h1>
+  <p>Дата: {{ order.date }}</p>
+  <p>Питомец: {{ order.pet.name }}</p>
+  <p>Доктор: {{ order.doctor.name }}</p>
+  <p>Услуги:</p>
+  <ul>
+    {% for service in order.services.all %}
+      <li>{{ service.name }} - {{ service.cost }}</li>
+    {% endfor %}
+  </ul>
+    <p>Общая стоимость: {{ order.total_cost }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Оплатить</button>
+</form>
+{% endblock %}

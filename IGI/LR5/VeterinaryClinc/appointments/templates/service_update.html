@@ -1,0 +1,11 @@
+<!-- service_update.html -->
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<h1>Обновление услуги</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Сохранить</button>
+</form>
+{% endblock %}
