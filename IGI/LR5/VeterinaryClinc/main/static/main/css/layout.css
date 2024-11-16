@@ -1,0 +1,111 @@
+/* Сброс стилей для body и html */
+span.last{
+    color: white;
+}
+::selection{
+    background-color: pink;
+    color: white;
+}
+
+body {
+    background-image: url('back.jpg'); /* Замените на путь к вашему изображению */
+    background-repeat: no-repeat; /* Отключение повторения изображения */
+    background-position: center; /* Позиционирование изображения */
+    background-size: cover; /* Масштабирование, чтобы заполнить весь экран */
+    z-index: 0;
+}
+
+
+button:hover {
+    cursor: pointer; /* Изменение курсора на руку */
+}
+a:hover {
+    cursor: pointer; /* Изменение курсора на руку */
+}
+/* Основной стиль для навигации */
+nav {
+    position: fixed; /* Фиксируем навигацию */
+    top: 0; /* Располагаем вверху страницы */
+    left: 0; /* Начало от левой стороны */
+    right: 0; /* Ширина на всю страницу */
+    background-color: black; /* Цвет фона навигации */
+    padding: 10px 20px; /* Отступы внутри навигации */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень под навигацией */
+    z-index: 1000; /* Устанавливаем высокий z-index, чтобы навигация была поверх остальных элементов */
+}
+
+/* Стили для списка ссылок в первой навигации */
+nav > span {
+    margin-right: 15px; /* Отступ между ссылками */
+}
+
+/* Убираем стандартные отступы и стили для списка во втором навигационном меню */
+nav + hr {
+    margin: 0; /* Убираем отступы */
+}
+
+/* Стили для второго навигационного меню */
+nav:nth-of-type(2) {
+    position: fixed; /* Фиксируем вторую навигацию */
+    top: 50px; /* Располагаем ниже первой навигации */
+    left: 0; /* Начало от левой стороны */
+    right: 0; /* Ширина на всю страницу */
+    background-color: white; /* Цвет фона навигации */
+    padding: 10px 20px; /* Отступы внутри навигации */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень под навигацией */
+    z-index: 1000; /* Устанавливаем высокий z-index, чтобы навигация была поверх остальных элементов */
+}
+main {
+    padding-top: 60px;
+    padding-bottom: 160px;
+}
+
+/* Стили для ссылок в навигации */
+a:link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: darkgreen; /* Цвет ссылок */
+}
+
+a:hover {
+    color: lightgreen;
+    font-size: 1.2em;
+    transition: font-size 0.2s ease;
+}
+
+a:visited {
+    color: lightgreen;
+}
+
+nav a:focus {
+    color: red;
+}
+
+nav a:active {
+    color: darkred;
+}
+
+/* Основной стиль для футера */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: #000;
+    text-align: center;
+    z-index: 1000; /* Убедитесь, что футер поверх других элементов */
+}
+
+
+/* Стили для контейнера с текстом в футере */
+.container {
+    margin-top: 10px; /* Отступ сверху для контейнера */
+}
+
+/* Стили для разделителей */
+hr {
+    border: 0; /* Убираем стандартный стиль рамки */
+    height: 3px; /* Высота линии */
+    background-color: darkgreen; /* Цвет линии */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}

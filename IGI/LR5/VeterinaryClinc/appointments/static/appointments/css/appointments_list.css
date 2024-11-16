@@ -1,0 +1,18 @@
+/* Настройка контейнера сетки */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* три колонки */
+  gap: 15px;
+  background-color: lightblue;
+  padding: 10px;
+}
+
+/* Стиль для каждого элемента сетки */
+.grid-item {
+  background-color: #fff; /* фон элемента */
+  border: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+

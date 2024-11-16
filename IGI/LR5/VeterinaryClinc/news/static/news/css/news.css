@@ -1,0 +1,68 @@
+/* Стили для списка новостей */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступы между элементами */
+    padding: 20px;
+    align:center;
+}
+
+.article-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-card img {
+    width: 150px;
+    border-radius: 5px; /* Закругление углов изображения */
+}
+
+.anons {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+
+/* Стили для текста статьи */
+.full-text {
+    column-count: 3; /* Установка многоколоночного макета на 3 колонки */
+    column-gap: 20px;
+    column-rule-color: red;
+    font-family: "Times new roman";
+    margin: 10px;
+    padding: 10px;
+    text-indent: 30px;
+    line-height: 1.2;
+    font-variant: small-caps;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+
+.full-text_img {
+    width: 300px; /* Изображение будет занимать всю ширину колонки */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block; /* Сделаем изображение блочным элементом */
+}
+
+.full-text p {
+    break-inside: avoid;
+    margin-bottom: 1em;
+    font-family: "Times new roman";
+    font-variant: small-caps;
+    margin: 10px;
+    padding: 10px;
+    text-indent: 30px;
+    line-height: 1.2;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-align: justify;
+}

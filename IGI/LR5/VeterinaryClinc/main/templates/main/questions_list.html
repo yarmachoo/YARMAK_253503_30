@@ -1,6 +1,9 @@
 {% extends 'main/layout.html' %}
 
+{% load static %}
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'main/css/faq.css' %}">
   <h2>Вопросы и Ответы</h2>
   <div class="questions">
     {% for question in questions %}

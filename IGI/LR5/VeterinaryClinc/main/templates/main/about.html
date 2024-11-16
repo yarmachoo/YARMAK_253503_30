@@ -1,6 +1,9 @@
 {% extends 'main/layout.html' %}
+{% load static %}
 <title>{% block title %}О компании{% endblock %}</title>
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'main/css/about.css' %}">
 
 <form translate="yes" enctype="multipart/form-data">
     <section>
@@ -13,6 +16,34 @@
     </div>
     </section>
     <a href="#n1" contenteditable="true" translate="yes" style="" title="примечание">См.примечание ниже - описание видов домашних животных</a>
+                <p>Сертификат:</p>
+
+        <div class="certificate">
+            <h1>Сертификат качества ISO</h1>
+            <h2>Ветеринарная клиника DOG&CAT</h2>
+
+            <p>Настоящим подтверждается, что ветеринарная клиника DOG&CAT успешно прошла аудит и соответствует требованиям международного стандарта ISO 9001:2015 в области управления качеством.</p>
+
+            <p><strong>Данный сертификат подтверждает, что:</strong></p>
+            <ul>
+                <li>Ветеринарная клиника обеспечивает высококачественное медицинское обслуживание животных.</li>
+                <li>Все процессы клиники направлены на удовлетворение потребностей клиентов и их питомцев.</li>
+                <li>В клинике внедрены современные методы диагностики и лечения, а также системы контроля качества.</li>
+                <li>Персонал клиники проходит регулярное обучение и повышение квалификации, что гарантирует высокий уровень профессионализма и заботы о пациентах.</li>
+                <li>Клиника соблюдает все необходимые стандарты безопасности и гигиены.</li>
+            </ul>
+
+            <p><strong>Выдано:</strong> 18.09.2024</p>
+            <p><strong>Срок действия:</strong> 18.09.2025</p>
+            <p><strong>Номер сертификата:</strong>24761249301</p>
+
+            <div class="signature">
+                <p><strong>Подпись:</strong>
+                <img src="static/main/img/signature.png" alt="Подпись" align="center" width="200">
+                Власенко И.И.</p>
+            </div>
+        </div>
+
     <section>
         <h3 hidden="hidden">Расскажите про покупки</h3>
     <div id="video">
@@ -39,7 +70,7 @@
         <img itemprop="logo" src="static/main/img/logo.png" alt="Логотип компании">
     </div>
     </section>
-    <section>
+    <section class="container">
     <article id="history">
         <h2>История по годам</h2>
         <ul itemprop="history">
@@ -50,8 +81,6 @@
             <li>2020: Цифровая трансформация</li>
         </ul>
     </article>
-    </section>
-    <section>
     <article id="contact-info">
         <h2>Реквизиты</h2>
         <p>Название компании: Пример ООО</p>
@@ -67,34 +96,6 @@
 
     <section>
     <div id="certificate">
-        <fieldset>
-            <legend>Сертификат:</legend>
-            <h1>Сертификат качества ISO</h1>
-    <h2>Ветеринарная клиника DOG&CAT</h2>
-
-    <p>Настоящим подтверждается, что ветеринарная клиника DOG&CAT успешно прошла аудит и соответствует требованиям международного стандарта ISO 9001:2015 в области управления качеством.</p>
-
-    <p><strong>Данный сертификат подтверждает, что:</strong></p>
-    <ul>
-        <li>Ветеринарная клиника обеспечивает высококачественное медицинское обслуживание животных.</li>
-        <li>Все процессы клиники направлены на удовлетворение потребностей клиентов и их питомцев.</li>
-        <li>В клинике внедрены современные методы диагностики и лечения, а также системы контроля качества.</li>
-        <li>Персонал клиники проходит регулярное обучение и повышение квалификации, что гарантирует высокий уровень профессионализма и заботы о пациентах.</li>
-        <li>Клиника соблюдает все необходимые стандарты безопасности и гигиены.</li>
-    </ul>
-
-    <p><strong>Выдано:</strong> 18.09.2024</p>
-    <p><strong>Срок действия:</strong> 18.09.2025</p>
-    <p><strong>Номер сертификата:</strong>24761249301</p>
-
-    <div class="signature">
-        <p><strong>Подпись:</strong>
-        <img src="static/main/img/signature.png" alt="Подпись" align="center" width="200">
-        Власенко И.И.</p>
-
-        </div>
-        </fieldset>
-
         </div>
         </section>
     <section>
@@ -110,10 +111,20 @@
     <h3>Сокращения</h3>
     <abbr title="Современные технологии разработки web-приложений">СТРweb-пр</abbr>
     <br>
-    <h3>Определения</h3>
-    Интерфейс в C# - это набор <dfn title="Сигнатура состоит из имени метода и его параметров">сигнатур</dfn> методов.
+    <h3 class="definitions">Определения</h3>
+        <p class="def">Интерфейс в C# - это набор <dfn title="Сигнатура состоит из имени метода и его параметров">сигнатур</dfn> методов.</p>
+        <p class="def2">Интерфейс в C# - это набор
+            Интерфейс в C# - это набор Интерфейс в C# - это набор Интерфейс в C# - это набор Интерфейс в C# - это набор Интерфейс в C# - это набор <dfn title="Сигнатура состоит из имени метода и его параметров">сигнатур</dfn> методов.</p>
     <h3>Цитаты</h3>
-    <q cite="https://metanit.com/sharp/tutorial/17.1.php">По умолчанию все элементы коллекции в <mark>LINQ</mark> обрабатываются последовательно, но начиная с .NET 4.0 в пространство имен System.Linq был добавлен класс ParallelEnumerable, который инкапсулирует функциональность PLINQ (Parallel LINQ) и позволяет выполнять обращения к коллекции в параллельном режиме.</q>
+    <br>
+        <q class="ru-quote" lang="ru" cite="https://metanit.com/sharp/tutorial/17.1.php">По умолчанию все элементы коллекции в <mark>LINQ</mark> обрабатываются последовательно, но начиная с .NET 4.0 в пространство имен System.Linq был добавлен класс ParallelEnumerable, который инкапсулирует функциональность PLINQ (Parallel LINQ) и позволяет выполнять обращения к коллекции в параллельном режиме.</q>
+    <br>
+        <q lang="fr" cite="https://metanit.com/sharp/tutorial/17.1.php">Par défaut, tous les éléments d'une collection dans LINQ sont traités séquentiellement, mais à partir de .NET 4.0, la classe ParallelEnumerable a été ajoutée à l'espace de noms System.Linq, qui encapsule la fonctionnalité de PLINQ (Parallel LINQ) et permet d'accéder à une collection dans parallèle.</q>
+    <br>
+        <q lang="en" cite="https://metanit.com/sharp/tutorial/17.1.php">By default, all elements of a collection in LINQ are processed sequentially, but starting with .NET 4.0, the ParallelEnumerable class was added to the System.Linq namespace, which encapsulates the functionality of PLINQ (Parallel LINQ) and allows access to a collection in parallel.</q>
+    <br>
+        <q lang="de" cite="https://metanit.com/sharp/tutorial/17.1.php">Standardmäßig werden alle Elemente einer Sammlung in LINQ sequentiell verarbeitet, aber ab .NET 4.0 wurde die ParallelEnumerable-Klasse zum System.Linq-Namespace hinzugefügt, die die Funktionalität von PLINQ (Parallel LINQ) kapselt und den Zugriff auf eine Sammlung in ermöglicht parallel.</q>
+
     <blockquote cite="https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D1%82%D0%B0%D1%82%D0%B0#:~:text=%D0%A6%D0%B8%D1%82%D0%B0%CC%81%D1%82%D0%B0%20(%D0%BE%D1%82%20%D0%BB%D0%B0%D1%82.,%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D0%B8%D1%82%D0%B8%D0%BA%D0%B8%20%D1%81%D0%B0%D0%BC%D0%BE%D0%B9%20%D1%86%D0%B8%D1%82%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D0%B9%20%D0%BC%D1%8B%D1%81%D0%BB%D0%B8.">Цитата</blockquote>
     <h3>Дата и время:</h3>
 
@@ -138,9 +149,9 @@
 
 Основные виды домашних животных</pre>
         <li type="A" >Собаки</li>
-        <ul>
-            <li>Описание: Собаки — одни из самых популярных домашних животных. Они известны своей преданностью и разнообразием пород, каждая из которых имеет свои характеристики и особенности.</li>
-            <li>Классификация: Собаки могут быть классифицированы по размерам (малые, средние и большие), по рабочим качествам (пастушьи, охотничьи, служебные) и по темпераменту (активные, спокойные, защитные).</li>
+        <ul class="dogs">
+            <li class="dogs">Описание: Собаки — одни из самых популярных домашних животных. Они известны своей преданностью и разнообразием пород, каждая из которых имеет свои характеристики и особенности.</li>
+            <li class="dogs">Классификация: Собаки могут быть классифицированы по размерам (малые, средние и большие), по рабочим качествам (пастушьи, охотничьи, служебные) и по темпераменту (активные, спокойные, защитные).</li>
         </ul>
 
         <div style="width:100%">
@@ -187,18 +198,16 @@
     <br>
     <br>
 
-        <table border="1" summary="Соотношение животных" >
-        <caption>Соотношение животных в процентах по месту жительства</caption>
-            <thead>
+        <table border="1" summary="Соотношение животных">
+    <caption>Соотношение животных в процентах по месту жительства</caption>
+    <thead>
         <tr>
-
             <th id="category">Категория</th>
             <th id="dogs">Собаки(%)</th>
             <th id="cats">Коты(%)</th>
-            <th rowspan="5" id="Pets">Pets</th>
         </tr>
-        </thead>
-            <tbody>
+    </thead>
+    <tbody>
         <tr>
             <th headers="category">Забирают из приюта</th>
             <td>60</td>
@@ -215,10 +224,11 @@
         </tr>
         <tr>
             <th headers="category">Живут на улицах</th>
-            <td colspan="2" >5</td>
+            <td colspan="2">5</td>
         </tr>
-            </tbody>
-    </table>
+    </tbody>
+</table>
+
     <br>
     <p>Выбрать себе любимца можно, например, на этих сайтах:</p>
         <ul>

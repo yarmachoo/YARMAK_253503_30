@@ -1,0 +1,270 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #2a2a2a;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    text-indent: 30px;
+    line-height: 1.2;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    font-variant: small-caps;
+    text-align: justify;
+}
+
+.container {
+    display: flex; /* Использование flex для расположения блоков */
+    justify-content: space-around; /* Равномерное распределение блоков */
+    align-items: center; /* Выравнивание по центру */
+    padding: 20px;
+}
+
+p {
+    font-family: "Times new roman"
+    margin: 10px;
+    padding: 10px;
+    text-indent: 30px;
+    line-height: 1.2;
+    font-variant: small-caps;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+q:lang(ru), q:lang(fr) {
+    quotes: "\00AB" "\00BB"
+}
+q:lang(de) {
+    quotes: "\201E" "\201C"
+}
+q:lang(en) {
+    quotes: "\201C" "\201D"
+}
+
+h3.definitions:before {
+    content: "Это всего лишь определения";
+}
+
+p.def2:after{
+    content: " - Конец определений!";
+}
+
+p.def::first-letter{
+    color: red;
+    font-size: 130%;
+    font-family: Arial;
+}
+
+p.def2::first-line{
+    color: blue;
+    font-size: 130%;
+    font-family: Arial;
+}
+
+ul.dogs{
+    list-style-type: none;
+}
+
+li.dogs:before{
+    content: "\20aa  ";
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Оформление разделов */
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+#company-info {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+}
+#logo img {
+    transform: scale(0.8) rotate(370deg); /* Увеличение на 10% и поворот на 5 градусов */
+    transition: transform 0.5s ease; /* Плавная анимация при изменении трансформации */
+}
+
+#logo img:hover {
+    transform: scale(1) rotate(0deg); /* Дополнительный эффект при наведении: увеличение и выравнивание */
+}
+
+/* Оформление таблиц */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    margin: 20px 0;
+    font-size: 16px;
+    background-color: #f9f9f9; /* Цвет фона для таблицы */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Обычные границы для ячеек */
+    padding: 10px;
+    text-align: center; /* Центрируем текст в ячейках */
+    vertical-align: middle; /* Вертикальное выравнивание текста в ячейках */
+    background-color: #fff; /* Цвет фона для ячеек */
+}
+
+td:empty {
+    background-color: #e0e0e0; /* Цвет фона для пустых ячеек */
+}
+
+thead th {
+    background-color: #007bff; /* Цвет фона заголовков */
+    color: #fff; /* Цвет текста заголовков */
+}
+
+caption {
+    font-size: 20px; /* Размер шрифта заголовка таблицы */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 10px; /* Отступ снизу заголовка */
+}
+
+/* Стили для строк таблицы */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Светло-серый фон для четных строк */
+}
+
+tbody tr:hover {
+    background-color: #d1ecf1; /* Цвет при наведении на строку */
+}
+
+
+/* Оформление видео и аудио */
+#video, #audio {
+    text-align: center;
+}
+
+video, audio {
+    margin: 0 auto;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Оформление картинок */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Оформление блоков цитат */
+blockquote {
+    border-left: 5px solid #ccc;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    font-style: italic;
+}
+
+/* Стили для стихотворения */
+center i {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4a4a4a;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .certificate {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+.certificate {
+    width: 600px;
+    border: 50px solid #40c4c8;
+    padding: 40px; /* Поля вокруг изображения */
+    -moz-border-image: url(borders_simple.jpg) 30;
+    -webkit-border-image: url(borders_simple.jpg) 30;
+    -o-border-image: url(borders_simple.jpg) 30;
+    border-image: url(borders_simple.jpg) 30 ;
+    background-image:
+        linear-gradient(to left top, rgba(100, 0, 0, 0.2), rgba(0, 0, 100, 0.2)),
+        url(background.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+
+.certificate h1 {
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.certificate h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.certificate p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.certificate .signature {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.certificate .signature img {
+    margin-top: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.certificate .signature p {
+    font-size: 16px;
+    font-weight: bold;
+}

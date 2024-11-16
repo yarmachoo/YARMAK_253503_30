@@ -7,11 +7,10 @@
             content="Veronika Yarmak">
     <title>{% block title %}Главная{% endblock %}</title>
     <link rel="shortcut icon" href="{% static 'main/icons/icon.png' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'main/css/layout.css' %}">
 </head>
 <body>
-<address>Created by Yarmak Veronika 253503</address>
-            <fieldset title="Nav">
-            <legend><h3>Навигация</h3></legend>
+Created by Yarmak Veronika 253503
         <nav>
             {% if user.is_authenticated %}
                 <span class="last"> {{user.username}} | <a href="{% url 'users:logout' %} ">Выйти</a></span>
@@ -20,32 +19,27 @@
             {% endif %}
             <br>
             <span><a href="{% url 'home' %}"><i class="fas fa-home"></i>Главная</a></span>
-            <span> | <a href="{% url 'about' %}"><i class="fas fa-address-card"></i>О компании</a></span>
-            <span> | <a href="{% url 'news_home' %}"><i class="fas fa-paper-plane"></i>Новости</a></span>
+            <span>  <a href="{% url 'about' %}"><i class="fas fa-address-card"></i>О компании</a></span>
+            <span>  <a href="{% url 'news_home' %}"><i class="fas fa-paper-plane"></i>Новости</a></span>
             {% if user.is_staff %}
-                <span> | <a href="{% url 'doctors_schedule' %}">Расписание</a></span>
+                <span> <a href="{% url 'doctors_schedule' %}">Расписание</a></span>
             {% else %}
-                <span> | <a href="{% url 'clients_home' %}">Питомцы</a></span>
-                <span> | <a href="{% url 'order_list' %}">Корзина заказов</a></span>
+                <span> <a href="{% url 'clients_home' %}">Питомцы</a></span>
+                <span> <a href="{% url 'order_list' %}">Корзина заказов</a></span>
             {% endif %}
-            <span> | <a href="{% url 'service_list' %}">Услуги</a></span>
-            <span> | <a href="{% url 'questions_list' %}">Словарь терминов и понятий</a></span>
-            <span> | <a href="{% url 'users:list_doctors' %}">Контакты</a></span>
-            <span> | <a href="{% url 'policy' %}">Политика</a></span>
-            <span> | <a href="{% url 'vacancy-list' %}">Вакансии</a></span>
-            <span> | <a href="{% url 'reviews-list' %}">Отзывы</a></span>
-            <span> | <a href="{% url 'promocode-list' %}">Промокоды и купоны</a></span>
-            <span> | <a href="{% url 'statistics' %}">Статистика</a></span>
-            <span> | <a href="{% url 'article-index' %}">График</a></span>
+            <span> <a href="{% url 'service_list' %}">Услуги</a></span>
+            <span> <a href="{% url 'questions_list' %}">Словарь терминов и понятий</a></span>
+            <span> <a href="{% url 'users:list_doctors' %}">Контакты</a></span>
+            <span> <a href="{% url 'policy' %}">Политика</a></span>
+            <span> <a href="{% url 'vacancy-list' %}">Вакансии</a></span>
+            <span> <a href="{% url 'reviews-list' %}">Отзывы</a></span>
+            <span> <a href="{% url 'promocode-list' %}">Промокоды и купоны</a></span>
+            <span> <a href="{% url 'statistics' %}">Статистика</a></span>
+            <span> <a href="{% url 'article-index' %}">График</a></span>
+            <span> <a href="{% url 'cat_fact' %}">Факты о кошках</a></span>
+            <span> <a href="{% url 'random_dog' %}">Фотографии собак</a></span>
 
         </nav>
-            </fieldset>
-        <hr color="darkgreen" size="3">
-            <nav>
-            <li><a href="{% url 'cat_fact' %}">Факты о кошках</a></li>
-            <li><a href="{% url 'random_dog' %}">Фотографии собак</a></li>
-            </nav>
-        <hr color="darkgreen" size="3">
     <main>
         {% block content %}
         {%  endblock %}

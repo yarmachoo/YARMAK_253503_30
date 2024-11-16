@@ -1,0 +1,49 @@
+/* Общие стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    empty-cells: hide;
+}
+
+/* Стили для заголовка таблицы */
+th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+caption {
+    caption-side: bottom;
+    font-weight: bold;
+    padding: 10px;
+}
+/* Стили для ячеек таблицы */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Чередование фона для строк таблицы */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+table td:empty {
+    background-color: #f0f0f0;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}

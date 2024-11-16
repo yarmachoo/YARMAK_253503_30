@@ -1,27 +1,58 @@
 {% extends 'main/layout.html' %}
-
+{% load static %}
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/animation.css' %}">
+
+<h1 class="main_page">Главная страница</h1>
+        <img src="static/main/img/logo.png" alt="Logo">
+        <img class="banner1" src="static/main/img/banner1.jpg" alt="banner1">
+<br><br><br><br>
+
+<!-- Контейнер для анимации в начале страницы -->
+<div class="animation-container">
+    <div class="scene">
+        <!-- Собака с грустным ртом и хвостом -->
+        <div class="dog">
+            <img src="static/main/img/animation/happy_dog.png" alt="Грустная собака" class="dog-body">
+            <img src="static/main/img/animation/sad_smile.png" alt="Грустный рот собаки" class="sad-smile">
+            <img src="static/main/img/animation/tail_new.png" alt="Хвост собаки" class="tail">
+        </div>
+
+        <!-- Кот с грустным ртом -->
+        <div class="cat">
+            <img src="static/main/img/animation/happy_cat_new.png" alt="Грустный кот" class="cat-body">
+            <!--<img src="sad_smile.png" alt="Грустный рот кота" class="sad-smile">-->
+        </div>
+
+        <!-- Ветеринар с отдельной рукой -->
+        <div class="doctor">
+            <img src="static/main/img/animation/doctor_new.png" alt="Ветеринар" class="doctor-body">
+            <img src="static/main/img/animation/hand_new.png" alt="Рука ветеринара" class="doctor-hand">
+        </div>
+    </div>
+</div>
+
 <form enctype="multipart/form-data">
     <div class="features">
-        <h1>Главная страница</h1>
-        <img src="static/main/img/logo.png" alt="Logo">
-        <img src="static/main/img/banner1.jpg" alt="banner1">
-
         <h4>Ветеринарная клиника Друг в Минске </h4>
 
-        <h1 translate="yes">{{ lastest_article.title }}</h1>
-        <p><strong>Анонс:</strong> {{ lastest_article.anons }}</p>
-        <p><strong>Полный текст:</strong> {{ lastest_article.full_text }}</p>
-        <p><strong>Дата публикации:</strong> {{ lastest_article.public_date }}</p>
-
+        <div class="article">
+            <h1 translate="yes">{{ lastest_article.title }}</h1>
+            <p><strong>Анонс:</strong> {{ lastest_article.anons }}</p>
+            <p><strong>Полный текст:</strong> {{ lastest_article.full_text }}</p>
+            <p><strong>Дата публикации:</strong> {{ lastest_article.public_date }}</p>
+        </div>
         <h2>Список услуг</h2>
         <ul>
             {% for service in services %}
             <li>
-                <a href="{% url 'service_detail' service.id %}">{{ service.name }} - {{ service.cost }} руб.</a>
+                <a class="service_detail" href="{% url 'service_detail' service.id %}">{{ service.name }} - {{ service.cost }} руб.</a>
             </li>
             {% endfor %}
         </ul>
+        <div class="partners">
         <h2>Компании-партнеры</h2>
         <table>
             <thead>
@@ -45,6 +76,13 @@
                 {% endfor %}
             </tbody>
         </table>
+        </div>
+        <br><br><br>
+        <div class="humster">
+            <img src="static/main/img/animation/without_humster.png" alt="Кольцо"  class="wheel-img">
+            <img src="static/main/img/animation/only_humster.png" alt="Хомяк" class="hamster-img" >
+        </div>
+        <br>
     </div>
 </form>
 {% endblock %}

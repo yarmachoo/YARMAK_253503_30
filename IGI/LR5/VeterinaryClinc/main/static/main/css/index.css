@@ -1,0 +1,161 @@
+h2, h1 {
+    font-style: italic;
+    font-family: "Times New Roman", serif;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    text-decoration: underline ;
+    text-decoration-color: green;
+    text-shadow: 2px 2px 7px green;
+    text-indent: 30px;
+    line-height: 1.2;
+    word-spacing: 3px;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+
+h1.main_page {
+    text-align: center;
+    color: black;
+    padding: 20px 0;
+    font-style: italic;
+}
+
+h4 {
+    font-size: 1.2em;
+    font-family: Courier, monospace;
+    text-align: center;
+    font-style: italic;
+    color: black
+    margin: 10px;
+    padding: 10px;
+    text-indent: 30px;
+    line-height: 1.2;
+    word-spacing: 3px;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+p, span, q, a.service_detail{
+    margin: 10px;
+    padding: 10px;
+    text-indent: 30px;
+    font-variant: small-caps;
+    line-height: 1.2;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+div.partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Стили для блока партнёров */
+table {
+    margin: 20px 0;
+    width: 120px;
+    height: 120px;
+    border-collapse: separate;
+    border-spacing: 50px 0;
+    text-align: center;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 10px;
+}
+
+/* Круглые блоки для партнёров */
+table td img {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 10px 10px rgba(0, 0, 120, 0.2);
+}
+
+/* Цвет фона и отступы для ячеек с логотипами */
+table td {
+    padding: 20px;
+    text-align: center;
+    background-image: radial-gradient(#E0FFFF, #5F9EA0);
+    border-radius: 100%;
+    border: 3px solid green;
+    box-shadow: 0 15px 15px rgba(0, 0, 120, 0.2); /* более заметная тень */
+    margin: 40px;
+}
+
+/* Шрифт и кернинг для названия компании */
+table td:nth-child(2) {
+    font-variant: small-caps;
+    text-shadow: 0px 5px 10px green;
+    font-weight: bold;
+    font-kerning: auto;
+    color: #444;
+    font-family: 'Times new roman';
+}
+
+@media screen{
+    img.banner1 {
+        width: 600px;
+    }
+}
+
+@media print{
+    img.banner1 {
+        width: 150px;
+    }
+}
+
+@media (max-height: 600px){
+    img.banner1 {
+        width: 300px;
+    }
+}
+
+@media (max-height: 800px){
+    img.banner1 {
+        width: 300px;
+    }
+}
+
+
+
+/* Позиционирование блока с информацией о последней статье */
+
+li:first-child {
+    background: white !important;
+}
+
+li:last-child {
+    background: white !important;
+}
+
+li:nth-child(2) {
+    background: white;
+}
+
+.features li:first-child a {
+    color: green; /* Пример изменения цвета текста ссылки */
+}
+
+.features {
+    position: relative;
+    padding: 20px;
+}
+.features h1, .features p {
+    position: relative;
+    left: 10px;
+    top: 0;
+    margin: 10px 0;
+}
+
+div.article {
+    position: relative;
+    top: 0em;
+}

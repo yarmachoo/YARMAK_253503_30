@@ -1,16 +1,16 @@
 {% extends 'main/layout.html' %}
-
+{% load static %}
 {% block title %}<h1>{{ article.title }}</h1>{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'news/css/news.css' %}">
 <form enctype="multipart/form-data">
-    <div class="features">
-
+    <div class="article-content">
         <h1>{{ article.title }}</h1>
-        <p>{{  article.anons }}</p>
+        <p class="anons">{{ article.anons }}</p>
         <p>{{ article.date }}</p>
-        <p>{{ article.full_text }}</p>
-        <img src="{{ article.image.url }}">
+        <div class="full-text">{{ article.full_text|safe }}</div> <!-- Применяем класс для многоколоночного текста -->
+        <img class="full-text_img" src="{{ article.image.url }}" alt="Изображение статьи">
     </div>
 </form>
 {% endblock %}

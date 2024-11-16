@@ -1,24 +1,20 @@
 {% extends 'main/layout.html' %}
-
-{% block title %}<h1>Новости на сайте</h1>{% endblock %}
+{% load static %}
+{% block title %}Новости на сайте{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'news/css/news.css' %}">
 <form enctype="multipart/form-data">
+    <h1>Новости на сайте</h1>
     <div class="features">
-        <h1>Новости на сайте</h1>
         {% if news %}
             {% for el in news %}
-                <div class="alert alert-warning">
+                <div class="alert alert-warning article-card">
                     <h3>{{ el.title }}</h3>
-                    <p>{{  el.anons }}</p>
-                    <img src="{{ el.image.url }}">
+                    <p class="anons">{{ el.anons }}</p>
+                    <img src="{{ el.image.url }}" alt="Изображение статьи">
                     <br>
-                    <!--
-                    <details open>
-                        <summary><i>Читать статью полностью</i></summary>
-                        <p>{{ el.full_text }}</p>
-                    </details>-->
-                   <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Читать детальнее</a>
+                    <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Читать детальнее</a>
                 </div>
             {% endfor %}
         {% else %}
@@ -29,6 +25,5 @@
         <p><a href="{% url 'create' %}"><button class="btn-info">Добавить запись</button></a></p>
         {% endif %}
     </div>
-
 </form>
 {% endblock %}

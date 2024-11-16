@@ -1,0 +1,33 @@
+/* Стили для описания вакансий */
+.vacancy {
+    float: left;
+    width: calc(33% - 20px); /* Ширина блока, 3 блока в ряд с отступами */
+    margin: 10px; /* Отступ между блоками */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень блока */
+    box-sizing: border-box;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 15px; /* Отступы для кнопок */
+    margin-top: 10px; /* Отступ сверху */
+    border: none; /* Убираем границы */
+    border-radius: 5px; /* Скругление углов кнопок */
+    text-align: center; /* Выравнивание текста в кнопках */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Цвет фона для кнопок "Подробнее" */
+    color: white; /* Цвет текста кнопок */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Цвет фона для кнопок "Назад" */
+    color: white; /* Цвет текста кнопок */
+}

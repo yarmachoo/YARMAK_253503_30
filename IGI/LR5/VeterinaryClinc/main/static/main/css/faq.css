@@ -1,0 +1,61 @@
+/* Стили для заголовка страницы */
+h2 {
+    font-size: 28px;
+    color: green;
+    margin-bottom: 20px;
+}
+
+/* Основные стили для контейнера вопросов */
+.questions {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Стили для каждого вопроса */
+.question {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* Эффект при наведении на вопрос */
+.question:hover {
+    background-color: #f1f1f1;
+}
+
+/* Стили для текста вопроса */
+.question b {
+    font-size: 18px;
+    color: green;
+}
+
+/* Стили для даты добавления */
+.question small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Стили для развернутого ответа */
+details {
+    margin-top: 10px;
+}
+
+/* Стили для элемента summary */
+summary {
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+/* Стили для текста ответа */
+details p {
+    margin-top: 10px;
+    color: #444;
+    line-height: 1.5; /* Междустрочный интервал */
+}

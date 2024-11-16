@@ -1,8 +1,11 @@
 {% extends 'main/layout.html' %}
-
+{% load static %}
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'main/css/promocodes.css' %}">
   <h2>Список промокодов</h2>
   <table>
+    <caption>Промокоды</caption>
     <thead>
       <tr>
         <th>Промокод</th>

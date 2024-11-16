@@ -1,16 +1,24 @@
 <!-- service_list.html -->
 {% extends 'main/layout.html' %}
 
+{% load static %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'appointments\css\appointments_list.css' %}">
 {% if user.is_staff %}
   <a href="{% url 'service_create' %}">Добавить новую услугу</a>
 {% endif %}
+<br>
+<br>
 <h1>Список услуг</h1>
-<ul>
+
+<div class="grid-container">
   {% for service in services %}
-  <li>
-    <a href="{% url 'service_detail' service.id %}">{{ service.name }} - {{ service.cost }} руб.</a>
-  </li>
+  <div class="grid-item">
+    <a href="{% url 'service_detail' service.id %}" class="service-link">
+      <h2 class="service-name">{{ service.name }}</h2>
+      <p class="service-cost">{{ service.cost }} руб.</p>
+    </a>
+  </div>
   {% endfor %}
-</ul>
+</div>
 {% endblock %}
