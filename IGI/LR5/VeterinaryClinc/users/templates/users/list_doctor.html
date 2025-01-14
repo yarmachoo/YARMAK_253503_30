@@ -1,29 +1,75 @@
 {% extends 'main/layout.html' %}
-
 {% load static %}
 {% block content %}
-
 <link rel="stylesheet" href="{% static 'users/css/doctors.css' %}">
-<form action="" method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
+<div>
+    <h3>Добавить нового доктора</h3>
+    <form id="add-doctor-form">
+        <label>
+            Имя:
+            <input type="text" id="new-doctor-username" required>
+        </label>
+        <label>
+            Фото URL:
+            <input type="text" id="new-doctor-photo" placeholder="default.jpg">
+        </label>
+        <label>
+            Телефон:
+            <input type="text" id="new-doctor-phone" required>
+        </label>
+        <label>
+            Email:
+            <input type="email" id="new-doctor-email" required>
+        </label>
+        <label>
+            Отделение:
+            <input type="text" id="new-doctor-department" required>
+        </label>
+
+    </form>
+</div>
+<button id="add-doctor-btn">Добавить сотрудника</button>
+<div class="table-container">
   <h2>Список докторов</h2>
-  <ul>
-    {% for doctor in doctors %}
-      <li>
-        <div>
-          <h3>{{ doctor.username }}</h3>
-          {% if doctor.photo %}
-            <img src="{{ doctor.photo.url }}" alt="Фото {{ doctor.username }}">
-            {% else %}
-            <img src="14.png">
-            {% endif %}
-          <p>Телефон: {{ doctor.phone_number }}</p>
-          <p>Дата рождения: {{ doctor.date_birth }}</p>
-          <p>Отделение: {{ doctor.department }}</p>
-          <p>Специализации: {{ doctor.specializations }}</p>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-  </form>
+
+  <!-- Фильтрация -->
+  <div class="filter-section">
+    <input type="text" id="filter-input" placeholder="Введите для фильтрации..." />
+    <button id="filter-btn" class="btn">Найти</button>
+  </div>
+
+  <!-- Таблица -->
+  <table id="doctor-table">
+    <thead>
+      <tr>
+        <th data-column="username">ФИО</th>
+        <th data-column="photo">Фото</th>
+        <th data-column="phone_number">Телефон</th>
+        <th data-column="email">Почта</th>
+        <th data-column="department">Отделение</th>
+        <th>Выбрать</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Данные будут загружены через JavaScript -->
+    </tbody>
+  </table>
+  <!-- Пагинация -->
+  <div class="pagination">
+    <button id="prev-page" class="btn">Предыдущая</button>
+    <span id="current-page">1</span> / <span id="total-pages">1</span>
+    <button id="next-page" class="btn">Следующая</button>
+  </div>
+  <button id="award-btn" class="btn">Премировать</button>
+    <div id="award-text" class="award-text"></div>
+  <div id="doctor-info" class="doctor-info">
+    <!-- Здесь будет отображаться информация о докторе -->
+</div>
+
+  <!-- Прелоадер -->
+  <div id="preloader" class="preloader" style="display: none;">Загрузка...</div>
+</div>
+
+<script src="{% static 'users/js/list_doctor.js' %}"></script>
+<script src="{% static 'users/js/add_new_doctor.js' %}"></script>
 {% endblock %}

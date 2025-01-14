@@ -12,6 +12,9 @@ urlpatterns = [
     path('preregistration/', views.preregistration, name='preregistration'),
     path('registerclient/', views.RegisterClient.as_view(), name='registerclient'),
     path('registerdoctor/', views.RegisterDoctor.as_view(), name='registerdoctor'),
-    path('list_doctors/', views.list_doctors, name='list_doctors')
+    #path('list_doctors/', views.list_doctors, name='list_doctors'),
+    path('list_doctors/', views.doctor_list, name='list_doctors'),
+    path('api/doctors/', views.get_doctors, name='get_doctors'),
+
 ]
 

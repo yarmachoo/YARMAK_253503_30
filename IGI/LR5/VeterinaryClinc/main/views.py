@@ -105,9 +105,21 @@ def policy(request):
     return render(request, "main/policy.html")
 
 
+def task_7_class(request):
+    return render(request, 'main/task_7_class.html')
+
+
+def task_7_prototype(request):
+    return render(request, 'main/task_7_prototype.html')
+
+
 def partner_list(request):
     partners = Partner.objects.all()
     return render(request, "main/index.html", {'partners': partners})
+
+
+def graph(request):
+    return render(request, 'main/graph.html')
 
 
 class QuestionDetailView(DetailView):

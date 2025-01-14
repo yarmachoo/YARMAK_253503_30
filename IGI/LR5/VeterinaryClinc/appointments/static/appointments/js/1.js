@@ -1,32 +1,35 @@
-function findMaxSubstring(strings) {
-    let shortestString = strings.reduce((minStr, currentStr) => currentStr.length < minStr.length ? currentStr : minStr, strings[0]);
-    let shortestLength = shortestString.length;
+const arr = [
+'Hello',
+ 100,
+  true,
+  {name: 'Alex'},
+  () => console.log('xaxa'),
+  [true, true, true]] //объект
 
-    let indices = Array.from({ length: 2 }, () => new Array(shortestLength).fill(0));
+console.log('arr:', arr[4]())
+arr[4] = ()=>console.log('miumiu');
+console.log('arr:', arr[4]())
+console.log('arr:', arr[6], arr)
+arr[6]='pipi'
+console.log('arr:', arr[6], arr, arr.length)
 
-    for (let i = 0; i < shortestLength; i++) {
-        for (let j = i + 1; j <= shortestLength; j++) {
-            let substring = shortestString.slice(i, j);
+arr.push('A', 'B', 'C')
 
-            if (strings.every(str => str.includes(substring))) {
-                indices[0][i] = i;
-                indices[1][i] = j - i;
-            } else break;
-        }
-    }
+console.log(arr)
 
-    let lengthOfMaxSubstring = Math.max(...indices[1]);
-    let index = indices[1].findIndex(len => len === lengthOfMaxSubstring);
 
-    let result = shortestString.slice(indices[0][index], indices[0][index] + indices[1][index]);
-    return result;
-}
+arr.unshift('A', 'B', 'C')
+console.log(arr)
+console.log(arr.at(-1))
 
-let strings = [""];
-console.log(findMaxSubstring(strings));
+arr.pop()
 
-const args = process.argv.slice(2);
+console.log(arr.shift())
 
-if (args.length === 0)
-    console.log('');
-else console.log(findMaxSubstring(args));
+console.log(arr.toString())
+
+console.log(arr.join(''))
+
+arr.forEach((element, index, array)=>{
+    console.log(element);
+});

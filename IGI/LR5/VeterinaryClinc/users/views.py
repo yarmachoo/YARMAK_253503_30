@@ -1,5 +1,5 @@
 import logging
-
+from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
@@ -51,3 +51,14 @@ def list_doctors(request):
     logging.info("Show doctors list")
     doctors = Doctor.objects.all()
     return render(request, 'users/list_doctor.html', {'doctors': doctors})
+
+
+def doctor_list(request):
+    return render(request, 'users/list_doctor.html')
+
+
+def get_doctors(request):
+    doctors = Doctor.objects.all().values(
+        'id', 'photo', 'username', 'phone_number', 'email', 'department', 'specializations'
+    )
+    return JsonResponse(list(doctors), safe=False)

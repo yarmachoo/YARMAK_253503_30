@@ -17,5 +17,8 @@ urlpatterns=[
     path('reviews/', views.reviews_list, name='reviews-list'),
     path('add_review/', views.add_review, name='add_review'),
     path('policy/', views.policy, name='policy'),
-    path('partners/', views.partner_list, name='partner_list')
+    path('partners/', views.partner_list, name='partner_list'),
+    path('task_7_prototype/', views.task_7_prototype, name='task_7_prototype'),
+    path('task_7_class/', views.task_7_class, name='task_7_class'),
+    path('graph/', views.graph, name='graph')
 ]

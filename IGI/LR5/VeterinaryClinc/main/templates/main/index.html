@@ -4,10 +4,114 @@
 
 <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
 <link rel="stylesheet" href="{% static 'main/css/animation.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/scroll_animation.css' %}">
+<script src="static/main/js/index.js"></script>
+    <section id="scroll-animation">
+  <img src="static/main/img/scroll_left.png" id="image-left" />
+  <img src="static/main/img/scroll_right.png" id="image-right" />
+</section>
+
+<script src="{% static 'main/js/scroll_animation.js' %}"></script>
+<style>
+        #square {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+    <div id="square"></div>
+    <script>
+        const square = document.getElementById("square");
+
+        // Определяем кадры анимации
+        const frames = [
+            {
+                transform: "translate(0, 0) scale(1)",
+                backgroundColor: "blue",
+                borderRadius: "0%",
+                offset: 0
+            },
+            {
+                transform: "translate(100px, 100px) scale(1.5)",
+                backgroundColor: "green",
+                borderRadius: "25%",
+                offset: 0.3
+            },
+            {
+                transform: "translate(200px, 0) scale(2)",
+                backgroundColor: "orange",
+                borderRadius: "50%",
+                offset: 0.6
+            },
+            {
+                transform: "translate(0, 0) scale(1)",
+                backgroundColor: "red",
+                borderRadius: "0%",
+                offset: 1
+            }
+        ];
+
+        // Параметры анимации
+        const config = {
+            duration: 2000,          // Время анимации
+            easing: "ease-in-out",   // Поведение анимации
+            delay: 0,                // Задержка
+            iterations: Infinity,    // Бесконечное повторение
+            direction: "alternate",  // Альтернативное направление
+            fill: "forwards"         // Заполнение
+        };
+
+        // Выполняем анимацию
+        square.animate(frames, config);
+    </script>
+
 
 <h1 class="main_page">Главная страница</h1>
-        <img src="static/main/img/logo.png" alt="Logo">
-        <img class="banner1" src="static/main/img/banner1.jpg" alt="banner1">
+<section class="photo-slider">
+    <div class="slider-container">
+      <div class="pagination" id="pagination"></div>
+
+      <div class="slider">
+        <div class="slide" data-url="https://www.facebook.com" style="display: block">
+          <img class="banner1" src="static/main/img/banner1.jpg" alt="banner1">
+          <div class="caption">Баннер 1</div>
+        </div>
+        <div class="slide" data-url="https://www.twitter.com">
+          <img class="banner2" src="static/main/img/banner2.jpg" alt="banner1">
+          <div class="caption">Баннер 2</div>
+        </div>
+        <div class="slide" data-url="https://www.instagram.com">
+          <img class="banner3" src="static/main/img/banner3.jpg" alt="banner1">
+          <div class="caption">Баннер 3</div>
+        </div>
+          <p></p>
+        <div style="display: flex; align-items: center;">
+            <div class="clickable-zone prev-zone">
+                <button class="arrow left-arrow">&lt; </button>
+            </div>
+            <div class="slide-counter" id="slide-counter"> 1/3 </div>
+            <div class="clickable-zone next-zone">
+                <button class="arrow right-arrow"> &gt;</button>
+            </div>
+        </div>
+
+      </div>
+
+      <form id="interval-form" class="interval-form">
+        <label for="rotation-interval">Интервал ротации (мс):</label>
+        <input
+          type="number"
+          id="rotation-interval"
+          name="rotation-interval"
+          value="3000"
+          min="1000"
+        />
+        <button type="button" onclick="slider.updateInterval()">Изменить</button>
+      </form>
+    </div>
+  </section>
+
+<img src="static/main/img/logo.png" alt="Logo">
 <br><br><br><br>
 
 <!-- Контейнер для анимации в начале страницы -->
@@ -35,6 +139,36 @@
 </div>
 
 <form enctype="multipart/form-data">
+    <label>
+    <input type="checkbox" id="customization-toggle" />
+    Включить настройки оформления
+  </label>
+
+    <h1>Проверка возраста и день недели</h1>
+
+  <label for="birthdate">Введите дату рождения:</label>
+  <input type="date" id="birthdate" />
+
+  <button id="checkAgeBtn">Проверить</button>
+
+  <div id="result"></div>
+
+  <!-- Блок настроек -->
+  <div id="customization-panel" style="display: none">
+    <label>
+      Размер шрифта:
+      <input type="range" id="font-size-slider" min="12" max="24" value="16" />
+    </label>
+    <label>
+      Цвет текста:
+      <input type="color" id="text-color-picker" value="#e0e0e0" />
+    </label>
+    <label>
+      Цвет фона:
+      <input type="color" id="background-color-picker" value="#121212" />
+    </label>
+  </div>
+
     <div class="features">
         <h4>Ветеринарная клиника Друг в Минске </h4>
 
@@ -85,4 +219,6 @@
         <br>
     </div>
 </form>
+<script src="static/main/js/check_age.js"></script>
+<script src="static/main/js/4task_change_color_text_bg.js"></script>
 {% endblock %}

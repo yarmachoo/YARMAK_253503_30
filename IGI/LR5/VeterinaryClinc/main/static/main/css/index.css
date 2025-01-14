@@ -16,6 +16,54 @@ h2, h1 {
     text-align: justify;
 }
 
+.slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+.slide img {
+    width: 100%;
+}
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.pagination button {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pagination button.active {
+    background-color: #333;
+}
+
 
 h1.main_page {
     text-align: center;
@@ -158,4 +206,18 @@ li:nth-child(2) {
 div.article {
     position: relative;
     top: 0em;
+}
+
+
+.dot {
+  width: 15px; /* Размер точки */
+  height: 15px; /* Размер точки */
+  background-color: rgba(255, 255, 255, 0.7); /* Белый цвет с прозрачностью */
+  border-radius: 50%; /* Скругление для создания круга */
+  cursor: pointer; /* Указатель при наведении */
+  z-index: 20; /* Обеспечиваем, чтобы точки всегда были видимы */
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 1); /* Активная точка более яркая */
 }

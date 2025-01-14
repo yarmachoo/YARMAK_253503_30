@@ -109,3 +109,103 @@ hr {
     background-color: darkgreen; /* Цвет линии */
     margin: 10px 0; /* Отступы сверху и снизу */
 }
+
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Колесо */
+.wheel-img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    animation: wheelSpin 6s linear infinite; /* 3 секунды быстрое вращение + 3 секунды замедление */
+}
+
+/* Хомяк */
+.hamster-img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    animation: hamsterRun 6s linear infinite; /* 3 секунды бег на месте + 3 секунды вращение */
+}
+
+/* Анимация для колеса */
+@keyframes wheelSpin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    10% {
+        transform: translate(-50%, -50%) rotate(200deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(1800deg);
+    }
+    80% {
+        transform: translate(-50%, -50%) rotate(2550deg);
+    }
+    87%{
+        transform: translate(-50%, -50%) rotate(2490deg);
+    }
+    94%{
+        transform: translate(-50%, -50%) rotate(2540deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(2510deg);
+    }
+}
+
+/* Анимация для хомяка */
+@keyframes hamsterRun {
+    0% {
+        transform: translate(-50%, -50%) translateY(-2px); /* Бег на месте */
+    }
+    10% {
+        transform: translate(-50%, -50%) translateY(2px);
+    }
+    20% {
+        transform: translate(-50%, -50%) translateY(-2px); /* Бег на месте */
+    }
+    30% {
+        transform: translate(-50%, -50%) translateY(2px);
+    }
+    40% {
+        transform: translate(-50%, -50%) translateY(-2px); /* Бег на месте */
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(1800deg); /* Вращение хомяка с колесом */
+    }
+    80% {
+        transform: translate(-50%, -50%) rotate(2550deg);
+    }
+    87%{
+        transform: translate(-50%, -50%) rotate(2490deg);
+    }
+    94%{
+        transform: translate(-50%, -50%) rotate(2540deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(2510deg);
+    }
+}

@@ -50,3 +50,23 @@ p {
     margin: 5px 0; /* Отступы сверху и снизу для абзацев */
     color: #666; /* Цвет текста для информации */
 }
+
+
+.sort-arrow {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+#doctor-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+#doctor-info img {
+    max-width: 150px;
+    margin-right: 20px;
+}

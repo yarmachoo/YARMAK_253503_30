@@ -8,6 +8,7 @@
     <title>{% block title %}Главная{% endblock %}</title>
     <link rel="shortcut icon" href="{% static 'main/icons/icon.png' %}" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'main/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/timer.css' %}">
 </head>
 <body>
 Created by Yarmak Veronika 253503
@@ -38,12 +39,30 @@ Created by Yarmak Veronika 253503
             <span> <a href="{% url 'article-index' %}">График</a></span>
             <span> <a href="{% url 'cat_fact' %}">Факты о кошках</a></span>
             <span> <a href="{% url 'random_dog' %}">Фотографии собак</a></span>
-
+            <span> <a href="{% url 'task_7_prototype' %}">task_7_prototype</a></span>
+            <span> <a href="{% url 'task_7_class' %}">task_7_class</a></span>
+            <span> <a href="{% url 'graph'%}">graph</a></span>
+            <script src="static/main/js/timer.js"></script>
         </nav>
+    <div id="preloader">
+  <div id="humster">
+    <img src="static/main/img/animation/without_humster.png" alt="Кольцо" class="wheel-img">
+    <img src="static/main/img/animation/only_humster.png" alt="Хомяк" class="hamster-img">
+  </div>
+</div>
     <main>
         {% block content %}
         {%  endblock %}
     </main>
+<script>
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("hidden");
+    }, 3000); // Задержка в 3 секунды для проверки
+});
+
+</script>
 </body>
 <footer>
     <h4>Полезные ссылки:</h4>
