@@ -1,0 +1,8 @@
+   {% extends 'main/layout.html' %}
+{% load static %}
+{% block content %}
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.2/math.min.js"></script>
+   <canvas id="myChart" width="800" height="400"></canvas>
+   <script src="{% static 'main/js/graph.js'%}"></script>
+{% endblock %}

@@ -1,4 +1,4 @@
-from asyncio.windows_events import NULL
+NULL = None
 
 from django.db import models
 from django.db.models import Sum

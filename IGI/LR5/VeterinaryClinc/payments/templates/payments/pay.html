@@ -1,0 +1,111 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <title>Оплата консультации</title>
+  <style>
+    .pay {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 50px;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+<div class="pay">
+  <h2>Оплата консультации</h2>
+  <button onclick="payConsultation(150)">Оплатить 150 VET</button>
+  <div class="info">После успешной оплаты вы будете перенаправлены на страницу с балансом консультаций.</div>
+</div>
+<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+<script>
+  const { Connection, Transaction, PublicKey } = solanaWeb3;
+
+async function payConsultation(amount) {
+    if (!window.solana || !window.solana.isPhantom) {
+        alert("Установите Phantom!");
+        return;
+    }
+
+    // Подключаем Phantom
+    await window.solana.connect();
+    const clientPubkey = window.solana.publicKey.toString();
+
+    // Запрашиваем у сервера транзакцию
+    const res = await fetch("http://127.0.0.1:8001/payments/start/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": "{{ csrf_token }}"
+        },
+        body: JSON.stringify({
+            client_id: "{{ user.id }}",
+            client_pubkey: clientPubkey,   // 👈 важно передать публичный ключ
+            amount: amount,
+            service_name: "Consultation"
+        })
+    });
+
+    const data = await res.json();
+    console.log("data.tx:", data.tx);
+
+    if (data.status === "ok") {
+    // Декодируем base64 в Uint8Array
+   function base64ToUint8Array(base64) {
+  const binary = atob(base64);
+  const len = binary.length;
+  const bytes = new Uint8Array(len);
+  for (let i = 0; i < len; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return bytes;
+}
+
+const txBytes = base64ToUint8Array(data.tx);
+const tx = Transaction.from(txBytes);
+
+    // Подписываем через Phantom
+    //const signedTx = await window.solana.signTransaction(tx);
+
+    // Отправляем в сеть
+    const connection = new Connection("http://127.0.0.1:8899", "confirmed");
+    //const sig = await connection.sendRawTransaction(signedTx.serialize());
+    const latestBlockhash = await connection.getLatestBlockhash();
+tx.recentBlockhash = latestBlockhash.blockhash;
+
+// подписываем
+const signedTx = await window.solana.signTransaction(tx);
+
+// отправляем
+const sig = await connection.sendRawTransaction(signedTx.serialize());
+
+    console.log("Успешно! Транзакция:", sig);
+alert("Успешно! Транзакция: " + sig);
+window.location.href = "/payments/consultations/";
+    } else {
+        alert("Ошибка: " + data.error);
+    }
+}
+</script>
+
+{% endblock %}

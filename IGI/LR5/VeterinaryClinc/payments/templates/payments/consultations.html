@@ -1,0 +1,55 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <title>Мои консультации</title>
+  <style>
+    .pay {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 50px;
+    }
+    h2 {
+      color: #333;
+    }
+    .balance {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-use {
+      background: #4CAF50;
+      color: white;
+    }
+    .btn-buy {
+      background: #2196F3;
+      color: white;
+    }
+    .btn:hover {
+      opacity: 0.85;
+    }
+  </style>
+<div class="pay">
+  <h2>Мои консультации</h2>
+  <div class="balance">
+    У вас на балансе <strong>{{ consultations_count }}</strong> консультация(й)
+  </div>
+
+  <button class="btn btn-use" onclick="location.href='/payments/use/'">
+    Воспользоваться!
+  </button>
+
+  <button class="btn btn-buy" onclick="location.href='/payments/pay/'">
+    Купить!
+  </button>
+</div>
+{% endblock %}

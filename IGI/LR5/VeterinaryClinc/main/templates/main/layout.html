@@ -14,7 +14,10 @@
 Created by Yarmak Veronika 253503
         <nav>
             {% if user.is_authenticated %}
-                <span class="last"> {{user.username}} | <a href="{% url 'users:logout' %} ">Выйти</a></span>
+            <form action="{% url 'users:logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit">Выйти</button>
+</form>
             {% else %}
                 <span class="last"><a href="{% url 'users:login' %}">Войти</a> | <a href="{% url 'users:preregistration' %}">Регистрация</a></span>
             {% endif %}
@@ -42,6 +45,7 @@ Created by Yarmak Veronika 253503
             <span> <a href="{% url 'task_7_prototype' %}">task_7_prototype</a></span>
             <span> <a href="{% url 'task_7_class' %}">task_7_class</a></span>
             <span> <a href="{% url 'graph'%}">graph</a></span>
+            <span> <a href="{% url 'consultations'%}">Консультации</a></span>
             <script src="static/main/js/timer.js"></script>
         </nav>
     <div id="preloader">

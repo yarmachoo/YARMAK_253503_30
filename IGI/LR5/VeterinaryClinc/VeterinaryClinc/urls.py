@@ -28,7 +28,7 @@ urlpatterns = [
     path('appointments/', include('appointments.urls')),
     path('users/', include('users.urls', namespace="users")),
     path('articles/', include('chart_django_project.urls')),
-
+    path('payments/', include('payments.urls')),
 ]
 
 if settings.DEBUG:

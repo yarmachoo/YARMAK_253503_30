@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'doctors',
     'sales',
     'users',
+    'payments',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
